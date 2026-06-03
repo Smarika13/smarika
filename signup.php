@@ -21,51 +21,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Sign Up</h2>
+  <div class="container">
+    <h2>Sign Up</h2>
 
-  <form action="signup.php" method="POST">
+    <form action="signup.php" method="POST">
 
-    <label>Username:</label><br>
-    <input type="text" name="username" placeholder="Username" required/><br><br>
+      <div class="form-group">
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Username" required/>
+      </div>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" placeholder="Password" required/><br><br>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Password" required/>
+      </div>
 
-    <label>Confirm Password:</label><br>
-    <input type="password" name="Confirm Password" placeholder="Confirm Password" required/><br><br>
+      <div class="form-group">
+        <label>Confirm Password:</label>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required/>
+      </div>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" placeholder="Email" required/><br><br>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Email" required/>
+      </div>
 
-    <label>Date of Birth:</label><br>
-    <input type="date" name="dob" required/><br><br>
+      <div class="form-group">
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" required/>
+      </div>
 
-    <label>Gender:</label><br>
-    <input type="radio" name="gender" value="Male" required/> Male
-    <input type="radio" name="gender" value="Female" /> Female
-    <input type="radio" name="gender" value="Other" /> Other<br><br>
+      <div class="form-group">
+        <label>Gender:</label>
+        <div class="radio-group">
+          <input type="radio" id="male" name="gender" value="Male" required/>
+          <label for="male">Male</label>
+          
+          <input type="radio" id="female" name="gender" value="Female"/>
+          <label for="female">Female</label>
+          
+          <input type="radio" id="other" name="gender" value="Other"/>
+          <label for="other">Other</label>
+        </div>
+      </div>
 
-    <label>Country:</label><br>
-    <select name="country" required>
-      <option value="">-- Select Country --</option>
-      <option value="Nepal">Nepal</option>
-      <option value="India">India</option>
-      <option value="USA">USA</option>
-      <option value="UK">UK</option>
-      <option value="Australia">Australia</option>
-      <option value="Canada">Canada</option>
-      <option value="China">China</option>
-      <option value="Japan">Japan</option>
-      <option value="Germany">Germany</option>
-      <option value="France">France</option>
-    </select><br><br>
+      <div class="form-group">
+        <label>Country:</label>
+        <select name="country" required>
+          <option value="">-- Select Country --</option>
+          <option value="Nepal">Nepal</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Australia">Australia</option>
+          <option value="Canada">Canada</option>
+          <option value="China">China</option>
+          <option value="Japan">Japan</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+        </select>
+      </div>
 
-    <button type="submit">Sign Up</button>
-  </form>
+      <button type="submit">Sign Up</button>
+    </form>
 
-  <p>Already have an account? <a href="login.php">Login</a></p>
+    <p>Already have an account? <a href="login.php">Login</a></p>
+  </div>
 </body>
 </html>
