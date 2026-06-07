@@ -34,258 +34,121 @@ $username = $_SESSION['username'];
     </div>
   </header>
 
-  <!-- ── MAIN LAYOUT ── -->
-  <main class="dash-main">
+  <!-- ── MAIN LAYOUT — 3 PARTITION LAYOUT ── -->
+  <main class="dash-main-three-partition">
 
-    <!-- ════ LEFT COLUMN ════ -->
-    <aside class="dash-left">
-
-      <!-- Profile Card -->
-      <div class="dash-card profile-card">
-        <div class="profile-avatar">
-          <?php echo strtoupper(substr($username, 0, 1)); ?>
+    <!-- ════ LEFT PARTITION — Image + Description + Table ════ -->
+    <section class="partition-left">
+      <div class="dash-card partition-card">
+        <h4 class="card-title">Featured Content</h4>
+        
+        <!-- Image Block -->
+        <div class="partition-img-block">
+          <img
+            src="images/image1.jpg"
+            alt="Featured Image"
+            class="partition-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="partition-img-fallback">📷 Add your image here</div>
         </div>
-        <h3 class="profile-name"><?php echo htmlspecialchars($username); ?></h3>
-        <p class="profile-tag">@<?php echo strtolower(htmlspecialchars($username)); ?></p>
-        <div class="profile-stats">
-          <div class="stat"><strong>128</strong><span>Posts</span></div>
-          <div class="stat"><strong>340</strong><span>Friends</span></div>
-          <div class="stat"><strong>12</strong><span>Groups</span></div>
+
+        <!-- Image Description -->
+        <div class="partition-img-desc">
+          <strong>Mountain Paradise</strong>
+          <p>A breathtaking view of nature's beauty captured at sunrise. Experience the serenity and majesty of mountain landscapes.</p>
+          <span class="partition-meta">📅 June 2026</span>
         </div>
-      </div>
 
-      <!-- Quick Links -->
-      <div class="dash-card">
-        <h4 class="card-title">Quick Links</h4>
-        <ul class="quick-links">
-          <li><a href="#home">🏠 Home Feed</a></li>
-          <li><a href="#about">📄 About Me</a></li>
-          <li><a href="#contact">📬 Contact</a></li>
-          <li><a href="#">👥 Friends</a></li>
-          <li><a href="#">📸 Photos</a></li>
-          <li><a href="#">🔔 Notifications</a></li>
-        </ul>
-      </div>
-
-      <!-- Activity Table -->
-      <div class="dash-card">
-        <h4 class="card-title">Recent Activity</h4>
+        <!-- Data Table -->
         <div class="table-wrap">
-          <table class="activity-table">
+          <h5 class="table-title">Activity Summary</h5>
+          <table class="partition-table">
             <thead>
               <tr>
                 <th>Activity</th>
-                <th>Date</th>
+                <th>Count</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Posted a photo</td>
-                <td>Jun 1</td>
-                <td><span class="badge badge-green">Done</span></td>
+                <td>Posts</td>
+                <td>128</td>
+                <td><span class="badge badge-green">Active</span></td>
               </tr>
               <tr>
-                <td>Added a friend</td>
-                <td>May 30</td>
-                <td><span class="badge badge-green">Done</span></td>
+                <td>Comments</td>
+                <td>45</td>
+                <td><span class="badge badge-green">Active</span></td>
               </tr>
               <tr>
-                <td>Updated profile</td>
-                <td>May 28</td>
+                <td>Likes Received</td>
+                <td>340</td>
+                <td><span class="badge badge-green">Active</span></td>
+              </tr>
+              <tr>
+                <td>Friends</td>
+                <td>87</td>
+                <td><span class="badge badge-green">Active</span></td>
+              </tr>
+              <tr>
+                <td>Groups Joined</td>
+                <td>12</td>
                 <td><span class="badge badge-orange">Pending</span></td>
-              </tr>
-              <tr>
-                <td>Joined group</td>
-                <td>May 25</td>
-                <td><span class="badge badge-green">Done</span></td>
-              </tr>
-              <tr>
-                <td>Sent message</td>
-                <td>May 22</td>
-                <td><span class="badge badge-green">Done</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+    </section>
 
-    </aside>
-
-    <!-- ════ CENTER FEED ════ -->
-    <section class="dash-center">
-
-      <!-- HOME Section -->
-      <div id="home" class="section-block">
-        <h2 class="section-heading">Home Feed</h2>
-
-        <!-- Post Box -->
-        <div class="dash-card post-box">
-          <div class="post-box-top">
-            <div class="post-avatar"><?php echo strtoupper(substr($username, 0, 1)); ?></div>
-            <input type="text" placeholder="What's on your mind, <?php echo htmlspecialchars($username); ?>?" class="post-input" readonly/>
-          </div>
-          <div class="post-box-actions">
-            <button class="post-action-btn">📸 Photo</button>
-            <button class="post-action-btn">🎥 Video</button>
-            <button class="post-action-btn">😊 Feeling</button>
-          </div>
+    <!-- ════ RIGHT PARTITION — Divided Horizontally ════ -->
+    <section class="partition-right">
+      
+      <!-- Top Right Panel — Image + Description -->
+      <div class="dash-card partition-card partition-card-top">
+        <h4 class="card-title">Top Highlight</h4>
+        
+        <div class="partition-img-block">
+          <img
+            src="images/image2.jpg"
+            alt="Top Highlight Image"
+            class="partition-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="partition-img-fallback">📷 Add your image here</div>
         </div>
 
-        <!-- Feed Posts -->
-        <div class="dash-card feed-post">
-          <div class="post-header">
-            <div class="post-avatar">A</div>
-            <div>
-              <strong>Alice Johnson</strong>
-              <p class="post-time">2 hours ago</p>
-            </div>
-          </div>
-          <p class="post-body">Just finished my project! So happy with how it turned out 🎉 Hard work really does pay off.</p>
-          <div class="post-footer">
-            <button class="react-btn">👍 Like</button>
-            <button class="react-btn">💬 Comment</button>
-            <button class="react-btn">↗ Share</button>
-          </div>
-        </div>
-
-        <div class="dash-card feed-post">
-          <div class="post-header">
-            <div class="post-avatar" style="background:#4a90d9;">B</div>
-            <div>
-              <strong>Bob Martinez</strong>
-              <p class="post-time">Yesterday</p>
-            </div>
-          </div>
-          <p class="post-body">Beautiful morning in Kathmandu today. The mountains are absolutely stunning from here 🏔️</p>
-          <div class="post-footer">
-            <button class="react-btn">👍 Like</button>
-            <button class="react-btn">💬 Comment</button>
-            <button class="react-btn">↗ Share</button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ABOUT Section -->
-      <div id="about" class="section-block">
-        <h2 class="section-heading">About</h2>
-        <div class="dash-card">
-          <p class="about-intro">ConnectHub is a social platform built for real connections. Share your life, discover others, and build a community that matters to you.</p>
-          <div class="about-grid">
-            <div class="about-item">
-              <span class="about-icon">🌍</span>
-              <div>
-                <strong>Global Community</strong>
-                <p>Connect with people from every corner of the world.</p>
-              </div>
-            </div>
-            <div class="about-item">
-              <span class="about-icon">🔒</span>
-              <div>
-                <strong>Private & Secure</strong>
-                <p>Your data is protected with encrypted passwords and secure sessions.</p>
-              </div>
-            </div>
-            <div class="about-item">
-              <span class="about-icon">⚡</span>
-              <div>
-                <strong>Built with PHP</strong>
-                <p>Powered by PHP, MySQL, and Apache via XAMPP.</p>
-              </div>
-            </div>
-          </div>
+        <div class="partition-img-desc">
+          <strong>Urban Exploration</strong>
+          <p>Discover the vibrant energy of city streets and modern architecture. A journey through contemporary design and urban culture.</p>
+          <span class="partition-meta">📅 June 2026</span>
         </div>
       </div>
 
-      <!-- CONTACT Section -->
-      <div id="contact" class="section-block">
-        <h2 class="section-heading">Contact</h2>
-        <div class="dash-card">
-          <div class="contact-grid">
-            <div class="contact-item">
-              <span class="contact-icon">📧</span>
-              <div>
-                <strong>Email</strong>
-                <p>support@connecthub.com</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">📍</span>
-              <div>
-                <strong>Location</strong>
-                <p>Kathmandu, Nepal</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">🕐</span>
-              <div>
-                <strong>Support Hours</strong>
-                <p>Sun–Fri, 9am – 6pm NPT</p>
-              </div>
-            </div>
-          </div>
+      <!-- Bottom Right Panel — Image + Description -->
+      <div class="dash-card partition-card partition-card-bottom">
+        <h4 class="card-title">Bottom Highlight</h4>
+        
+        <div class="partition-img-block">
+          <img
+            src="images/image3.jpg"
+            alt="Bottom Highlight Image"
+            class="partition-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="partition-img-fallback">📷 Add your image here</div>
+        </div>
+
+        <div class="partition-img-desc">
+          <strong>Nature's Tranquility</strong>
+          <p>Immerse yourself in peaceful landscapes and serene natural environments. Find inspiration in the beauty of the great outdoors.</p>
+          <span class="partition-meta">📅 June 2026</span>
         </div>
       </div>
 
     </section>
-
-    <!-- ════ RIGHT COLUMN ════ -->
-    <aside class="dash-right">
-
-      <!-- Upper panel — swap image1.jpg with your own file -->
-      <div class="dash-card right-panel">
-        <h4 class="card-title">Featured</h4>
-        <div class="right-img-block">
-          <img
-            src="images/image1.jpg"
-            alt="Featured Image 1"
-            class="right-img"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="right-img-fallback">📷 Add your image here</div>
-          <div class="right-img-desc">
-            <strong>Your Image Title</strong>
-            <p class="right-img-caption">Add a short description about this image. You can write anything you like here.</p>
-            <span class="right-img-meta">📅 June 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Horizontal divider between panels -->
-      <div class="right-divider"></div>
-
-      <!-- Lower panel — swap image2.jpg with your own file -->
-      <div class="dash-card right-panel">
-        <h4 class="card-title">Highlight</h4>
-        <div class="right-img-block">
-          <img
-            src="images/image2.jpg"
-            alt="Featured Image 2"
-            class="right-img"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="right-img-fallback">📷 Add your image here</div>
-          <div class="right-img-desc">
-            <strong>Your Image Title</strong>
-            <p class="right-img-caption">Add a short description about this image. You can write anything you like here.</p>
-            <span class="right-img-meta">📅 June 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Online Friends -->
-      <div class="dash-card">
-        <h4 class="card-title">Online Now</h4>
-        <ul class="online-list">
-          <li><span class="online-dot"></span> Alice Johnson</li>
-          <li><span class="online-dot"></span> Bob Martinez</li>
-          <li><span class="online-dot"></span> Priya Sharma</li>
-          <li><span class="online-dot"></span> Rajan Thapa</li>
-        </ul>
-      </div>
-
-    </aside>
 
   </main>
 
